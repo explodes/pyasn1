@@ -55,7 +55,10 @@ except ImportError:
     from distutils.core import setup, Command
     params = {}
 
-doclines = [ x.strip() for x in __doc__.split('\n') if x ]
+if __doc__:
+   doclines = [ x.strip() for x in __doc__.split('\n') if x ]
+else:
+   doclines = ''
 
 params.update( {
     'name': 'pyasn1',
